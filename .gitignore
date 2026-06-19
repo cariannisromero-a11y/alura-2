@@ -1,0 +1,40 @@
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vim/
+
+# Dependências (se usar Node)
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Build
+dist/
+build/
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# OS
+*.swp
+*.swo
+*~
+
+# Temporários
+temp/
+tmp/
+*.tmp
