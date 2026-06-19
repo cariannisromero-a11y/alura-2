@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CinemaHub - Plataforma de filmes otimizada com p5.js">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>CinemaHub - Descobra Filmes Incríveis</title>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" defer></script>
+</head>
+<body>
+    <!-- Header com animação p5.js -->
+    <header class="header" role="banner">
+        <div class="header-container">
+            <div id="p5-container" class="p5-header" aria-hidden="true"></div>
+            <div class="header-content">
+                <h1 class="logo" tabindex="0">🎬 CinemaHub</h1>
+                <nav class="nav-main" role="navigation" aria-label="Navegação principal">
+                    <ul>
+                        <li><a href="#inicio" class="nav-link">Início</a></li>
+                        <li><a href="#filmes" class="nav-link">Filmes</a></li>
+                        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section id="inicio" class="hero" role="region" aria-label="Seção de boas-vindas">
+        <div class="hero-content">
+            <h2>Bem-vindo ao CinemaHub</h2>
+            <p>Descubra filmes incríveis em uma plataforma otimizada e acessível</p>
+            <button class="btn btn-primary" id="scroll-filmes" aria-label="Ir para lista de filmes">Explorar Filmes</button>
+        </div>
+    </section>
+
+    <!-- Seção de Filtros -->
+    <section class="filters" role="region" aria-label="Filtros de filmes">
+        <div class="filters-container">
+            <h2 class="sr-only">Filtrar filmes por gênero</h2>
+            <button class="filter-btn active" data-filter="todos" aria-pressed="true">Todos</button>
+            <button class="filter-btn" data-filter="acao" aria-pressed="false">Ação</button>
+            <button class="filter-btn" data-filter="drama" aria-pressed="false">Drama</button>
+            <button class="filter-btn" data-filter="comedia" aria-pressed="false">Comédia</button>
+            <button class="filter-btn" data-filter="ficção" aria-pressed="false">Ficção</button>
+        </div>
+    </section>
+
+    <!-- Seção de Filmes (Galeria) -->
+    <section id="filmes" class="movies-section" role="region" aria-label="Galeria de filmes">
+        <div class="container">
+            <h2>Filmes Populares</h2>
+            <div class="movies-grid" id="movies-grid" role="grid">
+                <!-- Cards de filmes carregados dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalhes -->
+    <div id="movie-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar modal">&times;</button>
+            <div class="modal-body">
+                <img id="modal-poster" src="" alt="" class="modal-poster">
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p class="modal-year"><strong>Ano:</strong> <span id="modal-year"></span></p>
+                    <p class="modal-genre"><strong>Gênero:</strong> <span id="modal-genre"></span></p>
+                    <p class="modal-rating"><strong>Rating:</strong> <span id="modal-rating"></span>/10</p>
+                    <p class="modal-description" id="modal-description"></p>
+                    <button class="btn btn-secondary" id="modal-action" aria-label="Ação do filme">Assistir Agora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="about-section" role="region" aria-label="Sobre o CinemaHub">
+        <div class="container">
+            <h2>Sobre o CinemaHub</h2>
+            <p>
+                CinemaHub é uma plataforma moderna, otimizada e acessível para descobrir e explorar filmes.
+                Desenvolvida com foco em performance, usabilidade e acessibilidade (WCAG 2.1 AA).
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <footer id="contato" class="footer" role="contentinfo">
+        <div class="footer-content">
+            <h3>CinemaHub © 2026</h3>
+            <p>Desenvolvido com <span aria-label="amor">❤️</span> e otimizado com p5.js</p>
+            <div class="footer-links" role="navigation" aria-label="Links de rodapé">
+                <a href="#inicio">Voltar ao topo</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:contato@cinemahub.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="sketch-p5.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
